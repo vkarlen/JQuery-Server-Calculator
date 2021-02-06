@@ -9,11 +9,12 @@ ul {
 }
 
 form {
-  width: 300px;
+  width: 250px;
   margin: 20px auto;
-  padding: 20px 10px;
+  padding: 40px 10px;
   border: 1px #202020 solid;
   border-radius: 20px;
+  background-color: #706c61;
 }
 
 input {
@@ -27,7 +28,6 @@ h2 {
 }
 
 form {
-  background-color: #706c61;
 }
 
 #historyContainer,
@@ -36,4 +36,18 @@ form {
   margin: 10px 30%;
   border: 2px #202020 solid;
   text-align: center;
+}
+
+#inputfield {
+  background-color: #f5f5f5;
+  width: 150px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.number,
+.operator,
+.enterclear {
+  width: 45px;
+  margin: 2px;
 }

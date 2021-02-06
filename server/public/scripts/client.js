@@ -1,10 +1,13 @@
 $(document).ready(onReady);
 
 let operator = '';
+let currentNum = '';
+let firstNum = '';
 
 function onReady() {
   // create button calls
   $('.operator').on('click', changeOperator);
+  $('.number').on('click', grabNumber);
   $('#calcForm').on('submit', sendEquation);
   $('#clear').on('click', clearCalculator);
   //$('#clearHistory').on('click', clearHistory);
@@ -13,26 +16,49 @@ function onReady() {
 } // end onReady
 
 function changeOperator() {
-  //console.log('in changeOp', this.value);
+  console.log('in changeOp', this.value);
 
-  // reset operator to the one clicked
-  operator = this.value;
+  if (operator) {
+    alert('Sorry we can only do two numbers!');
+  } else {
+    // reset operator to the one clicked
+    operator = this.value;
+
+    // store first number and start a new number
+    firstNum = currentNum;
+    currentNum = '';
+    updateInput();
+  }
 } // end changeOperator
+
+function grabNumber() {
+  //console.log('in grabNumber', this.value);
+
+  // concatinate the number
+  currentNum += this.value;
+
+  updateInput();
+  //console.log(currNumber);
+} // end grabNumber
+
+function updateInput() {
+  $('#inputfield').val(`${firstNum} ${operator} ${currentNum}`);
+}
 
 function sendEquation(event) {
   event.preventDefault();
-  console.log('in sendEq');
+  //console.log('in sendEq');
 
   //make sure all inputs are filled
-  if (!operator || !$('#num1').val() || !$('#num2').val()) {
+  if (!operator || !firstNum || !currentNum) {
     alert('Missing inputs! Please try again');
   } else {
     // console.log('we are good to go');
 
     // create new equation object
     const newEquation = {
-      num1: Number($('#num1').val()),
-      num2: Number($('#num2').val()),
+      num1: Number(firstNum),
+      num2: Number(currentNum),
       operator: operator,
     };
     console.log(newEquation);
@@ -59,9 +85,11 @@ function sendEquation(event) {
 } // end sendEquation
 
 function clearCalculator() {
-  $('#num1').val('');
-  $('#num2').val('');
+  currentNum = '';
+  firstNum = '';
   operator = '';
+
+  updateInput();
 } // end clearCalc
 
 function updateDOM() {
@@ -112,4 +140,4 @@ function clearHistory() {
   //   .catch(function (err) {
   //     console.log(err);
   //   });
-}
+} // end clearHistory

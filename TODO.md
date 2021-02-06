@@ -32,10 +32,10 @@
 
 ## Stretch
 
-- [] Make interface look like an actual calculator
-  - [] Add number buttons
-  - [] Display in input as they are clicked
-  - [] Arrange in a block
+- [x] Make interface look like an actual calculator
+  - [x] Add number buttons
+  - [x] Display in input as they are clicked
+  - [x] Arrange in a block
 - [x] Only allow post if all inputs have been given.
   - [x] Alert if theres missing data
 - [] Add a button that clears the history using a DELETE request
