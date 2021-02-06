@@ -9,7 +9,6 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static('server/public'));
 
-//Turn it ON
 app.listen(port, () => {
   console.log("*hacker voice* We're in...", port);
 });
