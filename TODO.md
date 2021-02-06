@@ -18,8 +18,8 @@
   - [x] button for = and clear
   - [x] Answer display (h2)
   - [x] Calculation history
-- [] When = is clicked, it pulls all inputs and buttons into an object and sends to the server
-- [] When C is clicked, all inputs are cleared
+- [x] When = is clicked, it pulls all inputs and buttons into an object and sends to the server
+- [x] When C is clicked, all inputs are cleared
 - [] Server side takes the input object and does calculation. Sends back OK
 - [] Do a GET to retrieve the calculation object and display it on the DOM
 - [] Store calculation history on the server.
@@ -28,6 +28,7 @@
 ## Do Later
 
 - [] Make it pretty
+- [] Clean up code
 
 ## Stretch
 

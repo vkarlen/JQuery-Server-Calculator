@@ -15,6 +15,11 @@ app.listen(port, () => {
   console.log("*hacker voice* We're in...", port);
 });
 
+app.get('/calculate', (req, res) => {
+  console.log('in GET');
+  res.send(calculate.equationList);
+});
+
 app.post('/calculate', (req, res) => {
   let equation = req.body.equation_sent;
   console.log(equation);
