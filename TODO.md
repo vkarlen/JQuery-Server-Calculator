@@ -12,12 +12,12 @@
   - [x] style.css
 - [x] Initialize server
 - [x] Connect wires
-- [] Create framework on html
-  - [] 2 number inputs
-  - [] buttons for + - \* /
-  - [] button for = and clear
-  - [] Answer display (h2)
-  - [] Calculation history
+- [x] Create framework on html
+  - [x] 2 number inputs
+  - [x] buttons for + - \* /
+  - [x] button for = and clear
+  - [x] Answer display (h2)
+  - [x] Calculation history
 - [] When = is clicked, it pulls all inputs and buttons into an object and sends to the server
 - [] When C is clicked, all inputs are cleared
 - [] Server side takes the input object and does calculation. Sends back OK
