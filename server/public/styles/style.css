@@ -9,7 +9,7 @@ ul {
 }
 
 form {
-  width: 250px;
+  width: 230px;
   margin: 20px auto;
   padding: 40px 10px;
   border: 1px #202020 solid;
@@ -27,9 +27,6 @@ h2 {
   text-align: center;
 }
 
-form {
-}
-
 #historyContainer,
 #calcContainer {
   background-color: #f5f5f5;
@@ -40,9 +37,17 @@ form {
 
 #inputfield {
   background-color: #f5f5f5;
-  width: 150px;
-  text-align: center;
+  border: 1px #202020 solid;
+  display: inline-block;
   margin-bottom: 5px;
+  width: 208px;
+  height: 55px;
+  text-align: center;
+  font-size: 30px;
+}
+
+#enter {
+  width: 208px;
 }
 
 .number,

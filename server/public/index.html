@@ -24,8 +24,8 @@
       </form> -->
 
       <form id="calcForm">
-        <input type="text" id="inputfield" />
-        <input type="button" class="enterclear" id="clear" value="C" /><br />
+        <div id="inputfield"></div>
+        <br />
         <input type="button" class="number" value="7" />
         <input type="button" class="number" value="8" />
         <input type="button" class="number" value="9" />
@@ -40,8 +40,9 @@
         <input type="button" class="operator" value="*" /> <br />
         <input type="button" class="number" value="0" />
         <input type="button" class="number" value="." />
+        <input type="button" class="enterclear" id="clear" value="C" />
+        <input type="button" class="operator" value="/" /><br />
         <input type="submit" class="enterclear" id="enter" value="=" />
-        <input type="button" class="operator" value="/" />
       </form>
 
       <h2 id="answer"></h2>
@@ -49,11 +50,7 @@
     <div id="historyContainer">
       <h2>Calculator History</h2>
       <!-- <input type="button" id="clearHistory" value="Clear History" /> -->
-      <ul id="historyList">
-        <li>12 - 4 = 8</li>
-        <li>15 * 3 = 45</li>
-        <li>4 + 1 = 5</li>
-      </ul>
+      <ul id="historyList"></ul>
     </div>
   </body>
 </html>

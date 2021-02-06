@@ -42,7 +42,8 @@ function grabNumber() {
 } // end grabNumber
 
 function updateInput() {
-  $('#inputfield').val(`${firstNum} ${operator} ${currentNum}`);
+  $('#inputfield').empty();
+  $('#inputfield').append(`${firstNum} ${operator} ${currentNum}`);
 }
 
 function sendEquation(event) {

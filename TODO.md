@@ -40,5 +40,5 @@
   - [x] Alert if theres missing data
 - [] Add a button that clears the history using a DELETE request
 - [] Allow user to click an entry in the history and rerun it
-- [] Display last calculation with the answer
+- [x] Display last calculation with the answer
 - [] Deploy to Heroku
