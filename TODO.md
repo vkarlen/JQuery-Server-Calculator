@@ -20,10 +20,10 @@
   - [x] Calculation history
 - [x] When = is clicked, it pulls all inputs and buttons into an object and sends to the server
 - [x] When C is clicked, all inputs are cleared
-- [] Server side takes the input object and does calculation. Sends back OK
-- [] Do a GET to retrieve the calculation object and display it on the DOM
-- [] Store calculation history on the server.
-  - [] use GET to retrieve history and display on the DOM
+- [x] Server side takes the input object and does calculation. Sends back OK
+  - [x] stores equation and answer in array
+- [] Do a GET to retrieve the Equation list and display it on the DOM
+  - [] pull out last answer to show under the calculator
 
 ## Do Later
 

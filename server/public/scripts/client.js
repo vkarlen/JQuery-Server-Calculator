@@ -41,13 +41,14 @@ function sendEquation(event) {
     })
       .then(function (response) {
         console.log(response);
+        clearCalculator();
+        updateDOM();
       })
       .catch(function (err) {
         console.log(err);
       });
 
     //clear inputs
-    clearCalculator();
   }
 } // end sendEquation
 
@@ -56,3 +57,24 @@ function clearCalculator() {
   $('#num2').val('');
   operator = '';
 } // end clearCalc
+
+function updateDOM() {
+  // empty DOMs
+  $('#historyList').empty();
+  $('#answer').empty();
+
+  // GET equation list back from server
+  $.ajax({
+    method: 'GET',
+    url: '/calculate',
+  })
+    .then(function (response) {
+      console.log('response', response);
+      // Post last answer in #answer
+
+      // loop through array and append history to list
+    })
+    .catch(function (err) {
+      console.log(err);
+    });
+}
