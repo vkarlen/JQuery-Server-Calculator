@@ -10,24 +10,29 @@
     <title>Calculator</title>
   </head>
   <body>
-    <h1>Server Side Calculator</h1>
-    <form id="calcForm">
-      <input type="number" id="num1" />
-      <input type="button" class="operator" value="+" />
-      <input type="button" class="operator" value="-" />
-      <input type="button" class="operator" value="*" />
-      <input type="button" class="operator" value="/" />
-      <input type="number" id="num2" />
-      <input type="submit" id="enter" value="=" />
-      <input type="button" id="clear" value="C" />
-    </form>
+    <div id="calcContainer">
+      <h1>Server Side Calculator</h1>
+      <form id="calcForm">
+        <input type="number" id="num1" /> <br />
+        <input type="button" class="operator" value="+" />
+        <input type="button" class="operator" value="-" />
+        <input type="button" class="operator" value="*" />
+        <input type="button" class="operator" value="/" /><br />
+        <input type="number" id="num2" /><br />
+        <input type="submit" id="enter" value="=" />
+        <input type="button" id="clear" value="C" />
+      </form>
 
-    <h2 id="answer">##</h2>
-
-    <ul id="historyList">
-      <li>12 - 4 = 8</li>
-      <li>15 * 3 = 45</li>
-      <li>4 + 1 = 5</li>
-    </ul>
+      <h2 id="answer">##</h2>
+    </div>
+    <div id="historyContainer">
+      <h2>Calculator History</h2>
+      <input type="button" value="Clear History" />
+      <ul id="historyList">
+        <li>12 - 4 = 8</li>
+        <li>15 * 3 = 45</li>
+        <li>4 + 1 = 5</li>
+      </ul>
+    </div>
   </body>
 </html>

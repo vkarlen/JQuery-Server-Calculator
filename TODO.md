@@ -28,7 +28,7 @@
 ## Do Later
 
 - [] Make it pretty
-- [] Clean up code
+- [x] Clean up code
 
 ## Stretch
 
@@ -36,8 +36,9 @@
   - [] Add number buttons
   - [] Display in input as they are clicked
   - [] Arrange in a block
-- [] Only allow post if all inputs have been given.
-  - [] Alert if theres missing data
+- [x] Only allow post if all inputs have been given.
+  - [x] Alert if theres missing data
 - [] Add a button that clears the history using a DELETE request
 - [] Allow user to click an entry in the history and rerun it
+- [] Display last calculation with the answer
 - [] Deploy to Heroku

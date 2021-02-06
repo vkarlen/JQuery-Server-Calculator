@@ -1,0 +1,39 @@
+body {
+  background-color: #333333;
+  font-family: Verdana;
+}
+
+ul {
+  list-style: none;
+  text-align: left;
+}
+
+form {
+  width: 300px;
+  margin: 20px auto;
+  padding: 20px 10px;
+  border: 1px #202020 solid;
+  border-radius: 20px;
+}
+
+input {
+  font-size: 25px;
+}
+
+h1,
+h2 {
+  font-family: Georgia;
+  text-align: center;
+}
+
+form {
+  background-color: #706c61;
+}
+
+#historyContainer,
+#calcContainer {
+  background-color: #f5f5f5;
+  margin: 10px 30%;
+  border: 2px #202020 solid;
+  text-align: center;
+}

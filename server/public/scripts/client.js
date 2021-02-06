@@ -7,6 +7,8 @@ function onReady() {
   $('.operator').on('click', changeOperator);
   $('#calcForm').on('submit', sendEquation);
   $('#clear').on('click', clearCalculator);
+
+  updateDOM();
 } // end onReady
 
 function changeOperator() {
@@ -75,13 +77,16 @@ function updateDOM() {
       //console.log('response', history);
 
       // Post last answer in #answer
-      $('#answer').append(history[history.length - 1].answer);
+      // skip if there is no data to display yet
+      if (history.length) {
+        $('#answer').append(history[history.length - 1].answer);
 
-      // loop through array and append history to list
-      for (const equation of history) {
-        $('#historyList').append(`
+        // loop through array and append history to list
+        for (const equation of history) {
+          $('#historyList').append(`
         <li>${equation.num1} ${equation.operator} ${equation.num2} = ${equation.answer}</li>
         `);
+        }
       }
     })
     .catch(function (err) {
