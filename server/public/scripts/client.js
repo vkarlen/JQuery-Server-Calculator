@@ -68,11 +68,17 @@ function updateDOM() {
     method: 'GET',
     url: '/calculate',
   })
-    .then(function (response) {
-      console.log('response', response);
+    .then(function (history) {
+      console.log('response', history);
       // Post last answer in #answer
+      $('#answer').append(history[history.length - 1].answer);
 
       // loop through array and append history to list
+      for (const equation of history) {
+        $('#historyList').append(`
+        <li>${equation.num1} ${equation.operator} ${equation.num2} = ${equation.answer}</li>
+        `);
+      }
     })
     .catch(function (err) {
       console.log(err);

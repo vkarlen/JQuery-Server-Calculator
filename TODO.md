@@ -22,8 +22,8 @@
 - [x] When C is clicked, all inputs are cleared
 - [x] Server side takes the input object and does calculation. Sends back OK
   - [x] stores equation and answer in array
-- [] Do a GET to retrieve the Equation list and display it on the DOM
-  - [] pull out last answer to show under the calculator
+- [x] Do a GET to retrieve the Equation list and display it on the DOM
+  - [x] pull out last answer to show under the calculator
 
 ## Do Later
 
