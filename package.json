@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "name": "jquery-server-calculator",
+  "description": "[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vkarlen/JQuery-Server-Calculator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vkarlen/JQuery-Server-Calculator/issues"
+  },
+  "homepage": "https://github.com/vkarlen/JQuery-Server-Calculator#readme"
+}
