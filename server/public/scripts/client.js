@@ -19,7 +19,8 @@ function sendEquation(event) {
   console.log('in sendEq');
 
   //make sure an operator is selected
-  if (!operator || $('#num1').val('') || $('#num2').val('')) {
+  // || $('#num1').val('') || $('#num2').val('')
+  if (!operator) {
     console.log('Missing inputs!');
   } else {
     console.log('we are good to go');
@@ -31,6 +32,21 @@ function sendEquation(event) {
     };
     console.log(newEquation);
     // send it to the server
+    $.ajax({
+      method: 'POST',
+      url: '/calculate',
+      data: {
+        equation_sent: newEquation,
+      },
+    })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (err) {
+        console.log(err);
+      });
+
+    //clear inputs
     clearCalculator();
   }
 } // end sendEquation
