@@ -16,13 +16,13 @@ app.listen(port, () => {
 });
 
 app.get('/calculate', (req, res) => {
-  console.log('in GET');
+  //console.log('in GET');
   res.send(calculate.equationList);
 });
 
 app.post('/calculate', (req, res) => {
   let equation = req.body.equation_sent;
-  console.log(equation);
+  //console.log(equation);
 
   // add to calculate
   calculate.doCalculation(equation);

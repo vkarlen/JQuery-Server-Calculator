@@ -21,6 +21,11 @@ function doCalculation(equation) {
   console.log(equationList);
 
   return 'OK';
+} // end doCalculation
+
+function clearHistory() {
+  equationList = [];
+  return 'OK';
 }
 
-module.exports = { equationList, doCalculation };
+module.exports = { equationList, doCalculation, clearHistory };

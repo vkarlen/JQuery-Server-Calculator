@@ -7,6 +7,7 @@ function onReady() {
   $('.operator').on('click', changeOperator);
   $('#calcForm').on('submit', sendEquation);
   $('#clear').on('click', clearCalculator);
+  //$('#clearHistory').on('click', clearHistory);
 
   updateDOM();
 } // end onReady
@@ -79,7 +80,10 @@ function updateDOM() {
       // Post last answer in #answer
       // skip if there is no data to display yet
       if (history.length) {
-        $('#answer').append(history[history.length - 1].answer);
+        let lastEquation = history[history.length - 1];
+        $('#answer').append(
+          `${lastEquation.num1} ${lastEquation.operator} ${lastEquation.num2} = ${lastEquation.answer}`
+        );
 
         // loop through array and append history to list
         for (const equation of history) {
@@ -93,3 +97,19 @@ function updateDOM() {
       console.log(err);
     });
 } // end updateDOM
+
+function clearHistory() {
+  console.log('in clear history');
+
+  // $.ajax({
+  //   url: '/calculate',
+  //   type: 'DELETE',
+  // })
+  //   .then(function () {
+  //     console.log('heard back');
+  //     updateDOM();
+  //   })
+  //   .catch(function (err) {
+  //     console.log(err);
+  //   });
+}
