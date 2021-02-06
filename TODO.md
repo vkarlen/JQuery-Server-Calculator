@@ -33,3 +33,11 @@
 ## Stretch
 
 - [] Make interface look like an actual calculator
+  - [] Add number buttons
+  - [] Display in input as they are clicked
+  - [] Arrange in a block
+- [] Only allow post if all inputs have been given.
+  - [] Alert if theres missing data
+- [] Add a button that clears the history using a DELETE request
+- [] Allow user to click an entry in the history and rerun it
+- [] Deploy to Heroku

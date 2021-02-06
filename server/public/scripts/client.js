@@ -10,7 +10,9 @@ function onReady() {
 } // end onReady
 
 function changeOperator() {
-  console.log('in changeOp', this.value);
+  //console.log('in changeOp', this.value);
+
+  // reset operator to the one clicked
   operator = this.value;
 } // end changeOperator
 
@@ -18,12 +20,12 @@ function sendEquation(event) {
   event.preventDefault();
   console.log('in sendEq');
 
-  //make sure an operator is selected
-  // || $('#num1').val('') || $('#num2').val('')
-  if (!operator) {
-    console.log('Missing inputs!');
+  //make sure all inputs are filled
+  if (!operator || !$('#num1').val() || !$('#num2').val()) {
+    alert('Missing inputs! Please try again');
   } else {
-    console.log('we are good to go');
+    // console.log('we are good to go');
+
     // create new equation object
     const newEquation = {
       num1: Number($('#num1').val()),
@@ -31,6 +33,7 @@ function sendEquation(event) {
       operator: operator,
     };
     console.log(newEquation);
+
     // send it to the server
     $.ajax({
       method: 'POST',
@@ -40,15 +43,15 @@ function sendEquation(event) {
       },
     })
       .then(function (response) {
-        console.log(response);
+        //console.log(response);
+
+        //clear inputs & update DOM
         clearCalculator();
         updateDOM();
       })
       .catch(function (err) {
         console.log(err);
       });
-
-    //clear inputs
   }
 } // end sendEquation
 
@@ -69,7 +72,8 @@ function updateDOM() {
     url: '/calculate',
   })
     .then(function (history) {
-      console.log('response', history);
+      //console.log('response', history);
+
       // Post last answer in #answer
       $('#answer').append(history[history.length - 1].answer);
 
@@ -83,4 +87,4 @@ function updateDOM() {
     .catch(function (err) {
       console.log(err);
     });
-}
+} // end updateDOM
