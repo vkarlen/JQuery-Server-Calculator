@@ -27,8 +27,9 @@
 
 ## Do Later
 
-- [] Make it pretty
+- [x] Make it pretty
 - [x] Clean up code
+- [] add check so they cant use multiple .
 
 ## Stretch
 

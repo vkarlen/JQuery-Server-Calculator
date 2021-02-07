@@ -16,7 +16,7 @@ function onReady() {
 } // end onReady
 
 function changeOperator() {
-  console.log('in changeOp', this.value);
+  //console.log('in changeOp', this.value);
 
   if (operator) {
     alert('Sorry we can only do two numbers!');
@@ -42,8 +42,8 @@ function grabNumber() {
 } // end grabNumber
 
 function updateInput() {
-  $('#inputfield').empty();
-  $('#inputfield').append(`${firstNum} ${operator} ${currentNum}`);
+  $('#calcScreen').empty();
+  $('#calcScreen').append(`${firstNum} ${operator} ${currentNum}`);
 }
 
 function sendEquation(event) {
@@ -96,7 +96,7 @@ function clearCalculator() {
 function updateDOM() {
   // empty DOMs
   $('#historyList').empty();
-  $('#answer').empty();
+  $('#calcScreen').empty();
 
   // GET equation list back from server
   $.ajax({
@@ -110,9 +110,7 @@ function updateDOM() {
       // skip if there is no data to display yet
       if (history.length) {
         let lastEquation = history[history.length - 1];
-        $('#answer').append(
-          `${lastEquation.num1} ${lastEquation.operator} ${lastEquation.num2} = ${lastEquation.answer}`
-        );
+        $('#calcScreen').append(lastEquation.answer);
 
         // loop through array and append history to list
         for (const equation of history) {
