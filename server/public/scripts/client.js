@@ -3,6 +3,7 @@ $(document).ready(onReady);
 let operator = '';
 let currentNum = '';
 let firstNum = '';
+let lastAnswer = '';
 
 function onReady() {
   // create button calls
@@ -11,6 +12,7 @@ function onReady() {
   $('#calcForm').on('submit', sendEquation);
   $('#clear').on('click', clearCalculator);
   $('#clearHistory').on('click', clearHistory);
+  $(document).on('click', 'li', rerunEquation);
 
   updateDOM();
 } // end onReady
@@ -25,8 +27,12 @@ function changeOperator() {
     operator = this.value;
 
     // store first number and start a new number
-    firstNum = currentNum;
-    currentNum = '';
+    if (!currentNum) {
+      firstNum = lastAnswer;
+    } else {
+      firstNum = currentNum;
+      currentNum = '';
+    }
     updateInput();
   }
 } // end changeOperator
@@ -110,13 +116,13 @@ function updateDOM() {
       // Post last answer in #answer
       // skip if there is no data to display yet
       if (history.length) {
-        let lastEquation = history[history.length - 1];
-        $('#calcScreen').append(lastEquation.answer);
+        lastAnswer = history[history.length - 1].answer;
+        $('#calcScreen').append(lastAnswer);
 
         // loop through array and append history to list
         for (const equation of history) {
           $('#historyList').append(`
-        <li>${equation.num1} ${equation.operator} ${equation.num2} = ${equation.answer}</li>
+        <li data-id="${equation.index}">${equation.num1} ${equation.operator} ${equation.num2} = ${equation.answer}</li>
         `);
         }
       }
@@ -158,3 +164,8 @@ function clearHistory() {
       console.log(err);
     });
 } // end clearHistory
+
+function rerunEquation() {
+  let eq = $(this).data('id');
+  console.log('this:', eq);
+}

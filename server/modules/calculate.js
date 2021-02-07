@@ -1,4 +1,5 @@
 let equationList = [];
+let index = 0;
 
 function doCalculation(equation) {
   //console.log('in doCalculation');
@@ -15,6 +16,8 @@ function doCalculation(equation) {
     equation.answer = firstNum / secondNum;
   }
 
+  equation.index = index;
+  index++;
   // add to equation list
   equationList.push(equation);
 
