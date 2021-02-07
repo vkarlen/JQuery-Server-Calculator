@@ -29,6 +29,8 @@ function doCalculation(equation) {
 function clearHistory() {
   //console.log('calculate.js clearHistory');
   equationList.length = 0;
+
+  index = 0;
   //console.log(equationList);
   return 'OK';
 }
