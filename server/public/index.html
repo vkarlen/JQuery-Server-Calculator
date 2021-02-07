@@ -15,7 +15,10 @@
       <form id="calcForm">
         <div id="calcScreen"></div>
         <br />
-        <input type="button" class="enterclear" id="clear" value="CE" /><br />
+        <div id="delclearContainer">
+          <input type="button" class="delclear" id="del" value="DEL" />
+          <input type="button" class="delclear" id="clear" value="CE" />
+        </div>
         <input type="button" class="number" value="7" />
         <input type="button" class="number" value="8" />
         <input type="button" class="number" value="9" />
@@ -30,7 +33,7 @@
         <input type="button" class="operator" value="-" /> <br />
         <input type="button" class="number" value="0" />
         <input type="button" class="number" value="." />
-        <input type="submit" class="enterclear" id="enter" value="=" />
+        <input type="submit" id="enter" value="=" />
         <input type="button" class="operator" value="+" />
       </form>
 

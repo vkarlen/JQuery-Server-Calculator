@@ -11,6 +11,7 @@ function onReady() {
   $('.number').on('click', grabNumber);
   $('#calcForm').on('submit', sendEquation);
   $('#clear').on('click', clearCalculator);
+  $('#del').on('click', backspace);
   $('#clearHistory').on('click', clearHistory);
   $(document).on('click', 'li', rerunEquation);
 
@@ -194,3 +195,17 @@ function rerunEquation() {
       console.log(err);
     });
 } // end rerunHistory
+
+function backspace() {
+  console.log('back it up');
+
+  if (currentNum) {
+    currentNum = currentNum.substring(0, currentNum.length - 1);
+    console.log(currentNum);
+  } else {
+    operator = '';
+    currentNum = firstNum;
+    firstNum = '';
+  }
+  updateInput();
+}
