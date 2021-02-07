@@ -30,7 +30,7 @@
 - [x] Make it pretty
 - [x] Clean up code
 - [x] Add check so they cant use multiple .
-- [] Add DEL button to remove last typed number
+- [x] Add DEL button to remove last typed number
 - [x] Add ability to keep adding on numbers
 
 ## Stretch

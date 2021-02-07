@@ -114,8 +114,8 @@ function updateDOM() {
     url: '/calculate',
   })
     .then(function (history) {
-      console.log('response', history);
-      console.log('response', history.length);
+      //console.log('response', history);
+      //console.log('response', history.length);
 
       // Post last answer in #answer
       // skip if there is no data to display yet
@@ -197,15 +197,15 @@ function rerunEquation() {
 } // end rerunHistory
 
 function backspace() {
-  console.log('back it up');
+  //console.log('back it up');
 
   if (currentNum) {
     currentNum = currentNum.substring(0, currentNum.length - 1);
-    console.log(currentNum);
+    //console.log(currentNum);
   } else {
     operator = '';
     currentNum = firstNum;
     firstNum = '';
   }
   updateInput();
-}
+} // end backspace
