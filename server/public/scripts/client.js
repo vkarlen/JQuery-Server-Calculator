@@ -18,7 +18,7 @@ function onReady() {
 } // end onReady
 
 function changeOperator() {
-  console.log('in changeOp', this.value);
+  //console.log('in changeOp', this.value);
 
   if (operator) {
     alert('Sorry we can only do two numbers!');
@@ -40,8 +40,11 @@ function changeOperator() {
 function grabNumber() {
   //console.log('in grabNumber', this.value);
 
-  // concatinate the number
-  currentNum += this.value;
+  // check to make sure currentNum does not contain a decimal
+  if (this.value !== '.' || !currentNum.includes('.')) {
+    // concatinate the number
+    currentNum += this.value;
+  }
 
   updateInput();
   //console.log(currNumber);
