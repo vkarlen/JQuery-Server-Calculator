@@ -6,7 +6,7 @@ _Duration: 2 Days_
 
 This is a server-side calculator that can do simple equations with two given values.
 
-To see the fully functional site, please visit: [DEPLOYED VERSION OF APP](www.heroku.com)
+To see the fully functional site, please visit: [Heroku](https://cryptic-everglades-97036.herokuapp.com/)
 
 ## Usage
 
