@@ -2,7 +2,10 @@ const express = require('express');
 const calculate = require('./modules/calculate');
 
 const app = express();
-const port = 5000;
+let port = process.env.PORT;
+if (port == null || port == '') {
+  port = 8000;
+}
 
 // Config app
 app.use(express.json());
