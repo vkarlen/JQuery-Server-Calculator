@@ -10,13 +10,13 @@ function onReady() {
   $('.number').on('click', grabNumber);
   $('#calcForm').on('submit', sendEquation);
   $('#clear').on('click', clearCalculator);
-  //$('#clearHistory').on('click', clearHistory);
+  $('#clearHistory').on('click', clearHistory);
 
   updateDOM();
 } // end onReady
 
 function changeOperator() {
-  //console.log('in changeOp', this.value);
+  console.log('in changeOp', this.value);
 
   if (operator) {
     alert('Sorry we can only do two numbers!');
@@ -104,7 +104,8 @@ function updateDOM() {
     url: '/calculate',
   })
     .then(function (history) {
-      //console.log('response', history);
+      console.log('response', history);
+      console.log('response', history.length);
 
       // Post last answer in #answer
       // skip if there is no data to display yet
@@ -127,7 +128,11 @@ function updateDOM() {
 
 function clearHistory() {
   console.log('in clear history');
-
+  /*
+   * I tried & it messed up the whole path. I think I
+   * need to pass in data? But I don't know how I'm
+   * supposed to format that data at the moment.
+   */
   // $.ajax({
   //   url: '/calculate',
   //   type: 'DELETE',
@@ -139,4 +144,17 @@ function clearHistory() {
   //   .catch(function (err) {
   //     console.log(err);
   //   });
+
+  // work around POST method
+  $.ajax({
+    method: 'POST',
+    url: '/clearhistory',
+  })
+    .then(function (response) {
+      //console.log('back from the server');
+      updateDOM();
+    })
+    .catch(function (err) {
+      console.log(err);
+    });
 } // end clearHistory

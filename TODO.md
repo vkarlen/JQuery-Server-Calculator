@@ -29,7 +29,8 @@
 
 - [x] Make it pretty
 - [x] Clean up code
-- [] add check so they cant use multiple .
+- [] Add check so they cant use multiple .
+- [] Add backspace button
 
 ## Stretch
 
@@ -39,7 +40,7 @@
   - [x] Arrange in a block
 - [x] Only allow post if all inputs have been given.
   - [x] Alert if theres missing data
-- [] Add a button that clears the history using a DELETE request
+- [x] Add a button that clears the history using a DELETE request
 - [] Allow user to click an entry in the history and rerun it
 - [x] Display last calculation with the answer
 - [] Deploy to Heroku

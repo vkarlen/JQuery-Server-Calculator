@@ -1,7 +1,7 @@
-const equationList = [];
+let equationList = [];
 
 function doCalculation(equation) {
-  console.log('in doCalculation');
+  //console.log('in doCalculation');
   const firstNum = Number(equation.num1);
   const secondNum = Number(equation.num2);
   // do calculation and add answer
@@ -9,7 +9,7 @@ function doCalculation(equation) {
     equation.answer = firstNum + secondNum;
   } else if (equation.operator === '-') {
     equation.answer = firstNum - secondNum;
-  } else if (equation.operator === '*') {
+  } else if (equation.operator === 'x') {
     equation.answer = firstNum * secondNum;
   } else if (equation.operator === '/') {
     equation.answer = firstNum / secondNum;
@@ -24,7 +24,9 @@ function doCalculation(equation) {
 } // end doCalculation
 
 function clearHistory() {
-  equationList = [];
+  //console.log('calculate.js clearHistory');
+  equationList.length = 0;
+  //console.log(equationList);
   return 'OK';
 }
 

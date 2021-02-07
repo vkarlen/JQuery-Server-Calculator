@@ -22,11 +22,20 @@ app.get('/calculate', (req, res) => {
 
 app.post('/calculate', (req, res) => {
   let equation = req.body.equation_sent;
-  //console.log(equation);
+  console.log(equation);
 
   // add to calculate
   calculate.doCalculation(equation);
 
   // respond
+  res.sendStatus(200);
+});
+
+app.post('/clearhistory', (req, res) => {
+  //console.log('in clear history');
+
+  // call function to clear history
+  calculate.clearHistory();
+
   res.sendStatus(200);
 });
