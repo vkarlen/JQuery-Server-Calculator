@@ -166,6 +166,28 @@ function clearHistory() {
 } // end clearHistory
 
 function rerunEquation() {
-  let eq = $(this).data('id');
-  console.log('this:', eq);
-}
+  // get index stored on clicked element
+  let index = $(this).data('id');
+  //console.log('this:', index);
+
+  //
+  $.ajax({
+    method: 'GET',
+    url: '/calculate',
+  })
+    .then(function (response) {
+      //get the equation at the index clicked
+      let oldEquation = response[index];
+
+      // set working values to old values
+      firstNum = oldEquation.num1;
+      currentNum = oldEquation.num2;
+      operator = oldEquation.operator;
+
+      //update DOM
+      updateInput();
+    })
+    .catch(function (err) {
+      console.log(err);
+    });
+} // end rerunHistory

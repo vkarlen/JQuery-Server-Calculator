@@ -42,6 +42,6 @@
 - [x] Only allow post if all inputs have been given.
   - [x] Alert if theres missing data
 - [x] Add a button that clears the history using a DELETE request
-- [] Allow user to click an entry in the history and rerun it
+- [x] Allow user to click an entry in the history and rerun it
 - [x] Display last calculation with the answer
 - [] Deploy to Heroku
