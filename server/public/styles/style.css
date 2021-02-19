@@ -74,6 +74,15 @@ h2 {
   margin-bottom: 3px;
 }
 
+#footer {
+  position: absolute;
+  bottom: 5px;
+  left: 15px;
+  background: #b1b1b1;
+  padding: 3px;
+  border: 1px #202020 solid;
+}
+
 .number,
 .operator,
 #enter {
